@@ -7,7 +7,8 @@ class Plausible extends Adapter {
   final String _apiKey;
   final String domain;
 
-  Plausible(this.domain, this._apiKey, {super.userAgent, super.clientIP}):super(endpoint: 'https://plausible.io/api');
+  Plausible(this.domain, this._apiKey, {super.userAgent, super.clientIP})
+      : super(endpoint: 'https://plausible.io/api');
 
   @override
   String getName() {
@@ -58,13 +59,17 @@ class Plausible extends Adapter {
         '$endpoint/v1/stats/aggregate?site_id=$domain&filters=${jsonEncode({
           "goal": event.name
         })}';
-    final checkCreated = await call(method: 'GET', path: validateURL, headers: {
-      'Content-Type': '',
-      'Authorization': 'Bearer $_apiKey',
-    },);
+    final checkCreated = await call(
+      method: 'GET',
+      path: validateURL,
+      headers: {
+        'Content-Type': '',
+        'Authorization': 'Bearer $_apiKey',
+      },
+    );
     final created = jsonDecode(checkCreated);
 
-    if(created['results']?['visitors']?['value'] == null) {
+    if (created['results']?['visitors']?['value'] == null) {
       throw 'Failed to validate event';
     }
     return created['results']?['visitors']?['value'] > 0;

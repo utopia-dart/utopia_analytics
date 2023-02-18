@@ -6,7 +6,10 @@ abstract class Adapter {
   String? clientIP;
   String endpoint = '';
 
-  Adapter({this.userAgent = 'Utopia Dart Framework', this.clientIP, this.endpoint = ''});
+  Adapter(
+      {this.userAgent = 'Utopia Dart Framework',
+      this.clientIP,
+      this.endpoint = ''});
 
   final Map<String, String> headers = {};
   bool get enabled => _enabled;
