@@ -1,13 +1,10 @@
 name: utopia_analytics
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+description: Light and Fast Dart Analytics Library that supports multiple analytics providers.
+version: 0.0.1
+repository: https://github.com/utopia-dart/utopia_analytics
 
 environment:
   sdk: '>=2.19.2 <3.0.0'
-
-# dependencies:
-#   path: ^1.8.0
 
 dev_dependencies:
   lints: ^2.0.0
