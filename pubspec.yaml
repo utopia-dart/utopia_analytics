@@ -6,6 +6,9 @@ repository: https://github.com/utopia-dart/utopia_analytics
 environment:
   sdk: '>=2.19.2 <3.0.0'
 
+dependencies:
+  http: ^0.13.5
+
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.21.0
